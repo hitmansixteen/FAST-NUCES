@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+<h1>Seven wonders of the world</h1>
+<p>Do you know the seven wonders of the world?</p>
+<div id="content">
+    <h2>Wonders from Antiquity</h2>
+    <p>This list comes to us from ancient times.</p>
+    <ul class="wonders exe"  id="ancient">
+        <li class="exists">Great Pyramid of Giza</li>
+        <li>Hanging Gardens of Babylon</li>
+        <li>Lighthouse of Alexandria</li>
+        <li>Statue of Zeus at Olympia</li>
+        <li>Temple of Artemis at Ephesus</li>
+        <li>Mausoleum at Halicarnassus</li>
+        <li>Colossus of Rhodes</li>
+    </ul>
+    <h2>Modern wonders of the world</h2>
+    <p>This list was decided by vote.</p>
+    <ul class="wonders" id="new">
+        <li class="exists">Petra</li>
+        <li class="exists">Great Wall of China</li>
+        <Li class="exists">Christ the Redeemer</Li>
+        <Li class="exists">Machu Picchu</Li>
+        <li class="exists">Chichen Itza</li>
+        <li class="exists">Colosseum</li>
+        <li class="exists">Taj Mahal</li>
+    </ul>
+    <h2>References</h2>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Seven_Wonders_of_the_Ancient_World">Seven Wonders of the Ancient World</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/New7Wonders_of_the_World">New Wonders of the World</a></li>
+    </ul>
+</div>
+  <script>
+
+ //   console.log(document.childNodes[0].nodeName);
+//    console.log(document.body.childNodes[5].childNodes[1].innerHTML);
+
+//   console.log(document.getElementsByTagName('h2').length);
+//   let existElem=Array.from(document.getElementsByClassName('exists'));
+//   for(const x of existElem)
+//   {
+//     console.log(x.innerHTML);
+//   }
+//   //console.log(document.getElementById('ancient').getElementsByClassName('exists')[0].innerHTML);
+//  let New=Array.from(document.querySelectorAll('#new > .exists'));
+//  for(const x of New)
+//   {
+//     console.log(x.innerHTML);
+//   }
+  console.log(document.getElementById('ancient').classList);
+// // Show ID attribute of the first list
+// console.log(document.querySelector("ul").id);
+
+// Show href attribute of the first link
+console.log(document.querySelector("a").getAttribute('href'));
+
+// if (document.querySelector("a").hasAttribute("target")) {
+//   console.log("The first link has a target attribute.");
+// } else {
+//   console.log("The first link does not have a target attribute."); // Will be shown
+// }
+
+// // List of classes of the element identified by "ancient"
+// const classes = document.getElementById('ancient').classList;
+// console.log(classes.length); // 1 (since the element only has one class)
+// console.log(classes[0]);     // "wonders"
+
+// //  countElements() function here
+
+// function countElements(myElement)
+// {
+//  		return document.querySelectorAll(myElement).length; 
+// }
+
+// console.log(countElements('h1'));
+  </script>
+  </body>
+</html>

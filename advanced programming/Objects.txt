@@ -1,0 +1,27 @@
+// const obj={
+//     name:"Hira",
+//     age:30,
+//     behave: function(){
+//         return `Display object's name: ${this.name}`
+//     },
+//     behavior()
+//     {
+//         return `Display object's name: ${this.name}`
+//     },
+//// Don't use arrow function as METHOD
+//     arrowFunc:()=>{
+//         return `Display object's name: ${this.name}`
+//     }
+// };
+// console.log(obj.arrowFunc());
+
+
+// ////single object problem
+// // const obj1=obj;
+// // obj1.name="It will be Changed Everywhere as passed by reference";
+// // console.log(obj1.behave());
+// // console.log(obj.behave());
+
+// ////It will inherit prototype(class) of that object 'obj'
+// //let y=Object.create(obj)
+// //y.newProperty='fav food'

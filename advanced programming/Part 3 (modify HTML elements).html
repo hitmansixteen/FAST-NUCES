@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+<h3 class="beginning">Some languages</h3>
+<div id="content">
+    <ul id="languages">
+        <li id="cpp">C++</li>
+        <li id="java">Java</li>
+        <li id="csharp">C#</li>
+        <li id="php">PHP</li>
+    </ul>
+</div>
+<script>
+
+// // Modifying an HTML element: adding an <li>
+
+document.getElementById("languages").innerHTML += '<li id="c">C</li';
+
+
+// // Modify the title's text content
+// document.querySelector("h3").textContent += " for programming";
+
+// // Define the id attribute of the first title
+
+// document.querySelector("h3").setAttribute("id", "title");
+
+
+// // const titleElement = document.querySelector("h3"); // Grab the first h3
+// // titleElement.classList.remove("beginning");        // Remove the class "beginning"
+// // titleElement.classList.add("title");               // Add a class called "title"
+// // console.log(titleElement);
+
+
+// // Create an li element
+
+ const pythonElement = document.createElement("li");
+ pythonElement.id = "python";          // Define element ID
+
+// pythonElement.textContent = "Python"; // Define its text content
+
+
+// // Insert the new element into the DOM
+
+// document.getElementById("languages").appendChild(pythonElement); 
+
+// const perlElement = document.createElement("li"); // Create an "li" element
+// perlElement.id = "perl"; // Define element ID
+// perlElement.textContent = "Perl"; // Define its text content
+// // Insert the new element before the "PHP" node
+// document.getElementById("languages").insertBefore(perlElement, document.getElementById("php"));
+
+
+</script>
+  </body>
+</html>

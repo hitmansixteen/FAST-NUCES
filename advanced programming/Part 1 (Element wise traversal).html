@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My web page</title>
+</head>
+<body>
+    <h1>My web page</h1>
+    <p>Hello! My name's Hira.</p>
+    <p>I live in the great city of<a href="https://en.wikipedia.org/wiki/Lahore">Lahore</a>.</p>
+    <script>
+        //console.log(document.childNodes[0].nodeName);
+        var h=document.head;
+        console.log(h);
+        var b=document.body;
+        console.log(b);
+        //console.log(document.body.childNodes[0].nodeName);
+        if(document.body.nodeType===document.ELEMENT_NODE)
+        {
+            console.log("It is element node");
+        }
+        else
+        {
+            console.log("it is text node");
+        }
+        
+        for(x of document.body.childNodes)
+        {
+            if(x.nodeType===document.ELEMENT_NODE)
+            console.log(x.nodeName);
+        }
+
+    </script>
+</body>
+</html>

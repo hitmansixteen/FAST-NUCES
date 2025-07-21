@@ -1,0 +1,37 @@
+//Task is: If you receive an array having animals, then store counts of every animal in an object as this: {'dog':2,'cat':1,'cow':2} to see the repition of every animal
+
+
+// const animals=['dog','cat','dog','cow','cow'];
+// const animalcount=animals.reduce(function(obj,an)
+// {
+//     console.log(obj);
+//     //console.log(Boolean(obj[an]));
+//     if(obj[an]===undefined)
+//     {
+//         obj[an]=1;
+//     }
+//     else{
+//         obj[an]++;
+//     }
+//     return obj;
+// },{});
+
+// console.log(animalcount);
+
+
+////Another way of doing this:
+// //var obj2={dog: 0, cat:0 ,cow:0};
+// var obj2={};
+// console.log(obj2);
+// for(x of animals)
+// {
+//     if(obj2[x]>0)
+//     {
+//         obj2[x]++;
+//     }
+//     else{
+//         obj2[x]=1;
+//     }
+//     console.log(obj2);
+
+// }

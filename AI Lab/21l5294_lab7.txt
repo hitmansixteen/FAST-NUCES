@@ -1,0 +1,9 @@
+21l-5294
+laraib akhtar
+1. What are the distributions of the features in the dataset?
+Ans: SepalWidthCm, SepalLengthCm PetalLengthCm and PetalWidthCm. On the basis of these features the analysis of species was given in he form of histograms, 3d plots, correlations and boxplots etc.
+2. Are there any strong correlations between features?
+Ans: There is a strong correlation between petalLength and petalwidth of 0.96. There is a strong correlation between
+petal length and sepal length of 0.87. Also there is a correlation between petal width and sepal length of 0.82
+3. Are there any noticeable differences between the species?
+Ans: The species have different petal lengths of standard deviation of 1.76. Iris-setona has significantly larger petal and petal width than others.
