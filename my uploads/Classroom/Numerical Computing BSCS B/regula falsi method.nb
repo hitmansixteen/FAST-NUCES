@@ -1,0 +1,133 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4342,        125]
+NotebookOptionsPosition[      3845,        108]
+NotebookOutlinePosition[      4264,        124]
+CellTagsIndexPosition[      4221,        121]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"regulaFalsiMethodMethod", "[", 
+   RowBox[{"f_", ",", "val1_", ",", "val2_", ",", "tol_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "c", ",", "fc"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"a", "=", "val1"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"b", "=", "val2"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"c", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"b", "+", "a"}], ")"}], "/", "2"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"fc", "=", 
+      RowBox[{"f", "[", "c", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"fc", "=", 
+      RowBox[{"Abs", "[", "fc", "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"fc", ">", "tol"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"c", "=", " ", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"a", "\[Times]", 
+            RowBox[{"f", "[", "b", "]"}]}], "-", 
+           RowBox[{"b", "\[Times]", 
+            RowBox[{"f", "[", "a", "]"}]}]}], 
+          RowBox[{
+           RowBox[{"f", "[", "b", "]"}], "-", 
+           RowBox[{"f", "[", "a", "]"}]}]]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"fc", "=", 
+         RowBox[{"f", "[", "c", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"fc", "*", 
+             RowBox[{"f", "[", "a", "]"}]}], ")"}], ">", "0"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"a", "=", "c"}], ";"}], "\[IndentingNewLine]", ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"b", "=", "c"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"fc", "=", 
+         RowBox[{"Abs", "[", "fc", "]"}]}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", "c"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"x", "\[Times]", 
+     SuperscriptBox["\[ExponentialE]", "x"]}], "-", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Answer is \>\"", ",", 
+    RowBox[{"N", "[", 
+     RowBox[{"regulaFalsiMethodMethod", "[", 
+      RowBox[{"f", ",", "0", ",", "1", ",", "0.00001"}], "]"}], "]"}]}], 
+   "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9090704376565137`*^9, 3.909070445947893*^9}, {
+  3.909070888130509*^9, 3.909070902674759*^9}, {3.9090725805278964`*^9, 
+  3.909072598852251*^9}, {3.9090726464874907`*^9, 3.9090726484050655`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"ed601ce3-213c-4974-820e-fc9760671913"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Answer is \"\>", "\[InvisibleSpace]", "0.8526036986750377`"}],
+  SequenceForm["Answer is ", 0.8526036986750377],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.909071079312745*^9, 3.909072602014903*^9, 
+  3.9090726503717737`*^9},
+ CellLabel->
+  "During evaluation of \
+In[13]:=",ExpressionUUID->"e0c9335a-93ea-4150-8c54-6dad2190a5e5"]
+}, Open  ]]
+},
+WindowSize->{574.8, 579.6},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a9b87f6a-c6e5-4c45-b7ff-51687e97a800"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2859, 72, 523, "Input",ExpressionUUID->"ed601ce3-213c-4974-820e-fc9760671913"],
+Cell[3442, 96, 387, 9, 22, "Print",ExpressionUUID->"e0c9335a-93ea-4150-8c54-6dad2190a5e5"]
+}, Open  ]]
+}
+]
+*)
+

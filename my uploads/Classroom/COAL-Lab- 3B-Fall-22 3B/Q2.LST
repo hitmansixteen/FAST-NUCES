@@ -1,0 +1,27 @@
+     1                                  [org 0x0100]
+     2                                  
+     3 00000000 E91000                  jmp start
+     4                                  
+     5                                  give:
+     6                                  loop1:
+     7 00000003 D1E8                    	shr ax,1
+     8 00000005 7203                    	jc loop2
+     9 00000007 E90100                  	jmp loop3
+    10                                  
+    11 0000000A 43                      loop2: inc bx
+    12                                  
+    13 0000000B 41                      loop3: 	inc cx
+    14 0000000C 81F91000                		cmp cx,16
+    15 00000010 75F1                    		jne loop1
+    16                                  
+    17 00000012 C3                      		ret
+    18                                  
+    19                                  start:
+    20 00000013 B90000                  		mov cx,0
+    21 00000016 BB0000                  		mov bx,0
+    22 00000019 B87018                  		mov ax,1870h
+    23                                  
+    24 0000001C E8E4FF                  		call give
+    25                                  
+    26 0000001F B8004C                  mov ax,0x4c00
+    27 00000022 CD21                    int 0x21

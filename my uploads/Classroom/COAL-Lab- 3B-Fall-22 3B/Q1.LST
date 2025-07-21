@@ -1,0 +1,38 @@
+     1                                  [org 0x0100]
+     2                                  
+     3 00000000 E93500                  jmp start
+     4                                  
+     5 00000003 FDFF0205060809          	s1: db -3,-1, 2, 5, 6, 8, 9
+     6 0000000A FE02060709              	s2: db -2, 2, 6, 7, 9
+     7 0000000F 00                      	difference: db 0
+     8                                  	
+     9                                  	
+    10                                  
+    11                                  diff:
+    12 00000010 8A84[0300]              l1:	mov al,[s1+si]
+    13 00000014 3A87[0A00]              	cmp al,[s2+bx]
+    14 00000018 7416                    	je l2
+    15 0000001A 43                      	inc bx
+    16 0000001B 81FB0500                	cmp bx,5
+    17 0000001F 75EF                    	jne l1
+    18 00000021 B100                    	mov cl,0
+    19 00000023 8A8C[0300]              	mov cl,[s1+si]
+    20 00000027 888D[0F00]              	mov byte[difference+di],cl
+    21 0000002B 8A95[0F00]              	mov dl, [difference+di]
+    22 0000002F 47                      	inc di
+    23                                  
+    24 00000030 46                      l2: 	inc si
+    25 00000031 81FE0700                	cmp si,7
+    26 00000035 75D9                    	jne l1
+    27                                  
+    28 00000037 C3                      	ret
+    29                                  
+    30                                  start:
+    31 00000038 BE0000                  	mov si,0
+    32 0000003B BF0000                  	mov di,0
+    33 0000003E BB0000                  	mov bx,0
+    34                                  	
+    35 00000041 E8CCFF                  	call diff
+    36                                  
+    37 00000044 B8004C                  mov ax,0x4c00
+    38 00000047 CD21                    int 0x21

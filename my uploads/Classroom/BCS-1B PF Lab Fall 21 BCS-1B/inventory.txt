@@ -1,0 +1,10 @@
+Apple 15 3.5
+Orange 20 5.7
+Banana 50 2.5
+Papaya 23 10
+Lychee 35 1
+Olive 56 2
+Strawberry 120 3.5
+Raspberry 18 1
+Date 90 1.2
+Mango 4 15

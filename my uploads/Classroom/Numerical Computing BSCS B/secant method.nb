@@ -1,0 +1,133 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4366,        125]
+NotebookOptionsPosition[      3888,        108]
+NotebookOutlinePosition[      4288,        124]
+CellTagsIndexPosition[      4245,        121]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"secantMethod", "[", 
+   RowBox[{"f_", ",", "val1_", ",", "val2_", ",", "tol_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "c", ",", "fc"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"a", "=", "val1"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"b", "=", "val2"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"c", "=", " ", 
+      RowBox[{"b", "-", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"f", "[", "b", "]"}], "\[Times]", 
+         RowBox[{"(", 
+          RowBox[{"b", "-", "a"}], ")"}]}], 
+        RowBox[{
+         RowBox[{"f", "[", "b", "]"}], "-", 
+         RowBox[{"f", "[", "a", "]"}]}]]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"fc", "=", 
+      RowBox[{"f", "[", "c", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"fc", "=", 
+      RowBox[{"Abs", "[", "fc", "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"fc", ">", "tol"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"c", "=", " ", 
+         RowBox[{"b", "-", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"f", "[", "b", "]"}], "\[Times]", 
+            RowBox[{"(", 
+             RowBox[{"b", "-", "a"}], ")"}]}], 
+           RowBox[{
+            RowBox[{"f", "[", "b", "]"}], "-", 
+            RowBox[{"f", "[", "a", "]"}]}]]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"fc", "=", 
+         RowBox[{"f", "[", "c", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"a", "=", "b"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"b", "=", "c"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"fc", "=", 
+         RowBox[{"Abs", "[", "fc", "]"}]}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", "c"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"x", "\[Times]", 
+     SuperscriptBox["\[ExponentialE]", "x"]}], "-", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"x", " ", "Degree"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Answer is \>\"", ",", 
+    RowBox[{"N", "[", 
+     RowBox[{"secantMethod", "[", 
+      RowBox[{"f", ",", "0", ",", "1", ",", "0.001"}], "]"}], "]"}]}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQfcLg5acv8m8dd13v+AyiJ1kf/Ami3UWv/QHRn/6o
+sH0F0rxuh8C0TZI6L4julnwsAKLve0ergmimDY/0QHTKMnYLEM2mnQymdf4z
+OoLoJ5dP+oHoRXXVESDagj2zBESbaPc3geg75lz9IHqd27GpIHrVhgfzQXTW
+l4erQHTHDZGDIFptps4FEH3qR+NFEP1Oy/QRiJZlO/cBRMdP0foOon0KHX6C
+6FtT9v4D0UIx8szfQPZ6e4uBaCZ2FgkQ7Vt8gvE7kO5M4OcA0UV/7wqC6OQC
+cWEQzXXXRwJE69RNlgTRXSe9FUF0z94IMA0AnR+kLg==
+  "],
+ CellLabel->"In[49]:=",ExpressionUUID->"9f760031-fa97-4813-9905-e16d6fc50ff4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Answer is \"\>", "\[InvisibleSpace]", "0.5671198418577433`"}],
+  SequenceForm["Answer is ", 0.5671198418577433],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9090730514413853`*^9, 3.909073102603985*^9, 
+  3.909073173173525*^9},
+ CellLabel->
+  "During evaluation of \
+In[49]:=",ExpressionUUID->"00d108cb-d013-4fff-9be0-b23710476e8c"]
+}, Open  ]]
+},
+WindowSize->{574.8, 574.8},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e74d1161-8aa4-46ff-bf20-7b74ebb62409"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2902, 72, 451, "Input",ExpressionUUID->"9f760031-fa97-4813-9905-e16d6fc50ff4"],
+Cell[3485, 96, 387, 9, 22, "Print",ExpressionUUID->"00d108cb-d013-4fff-9be0-b23710476e8c"]
+}, Open  ]]
+}
+]
+*)
+

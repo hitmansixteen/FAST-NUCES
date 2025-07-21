@@ -1,0 +1,156 @@
+-- create a table
+
+CREATE TABLE Products (
+  productid INT,
+  Product_name varchar(40) NOT NULL,
+  Category_id INT,
+  price INT
+);
+
+CREATE TABLE Orders
+(
+order_id INT,
+Customer_id INT,
+order_date DATE
+);
+
+CREATE TABLE Order_details(
+Order_detail_id INT,
+Order_Id INT,
+Product_Id INT,
+Quantity INT
+
+);
+
+CREATE TABLE Customers
+(
+customer_id INT,
+customer_name varchar(30),
+city varchar(20)
+)
+
+
+
+
+insert into Products values
+	(1, 'Lays Salted 200mg', 1, 18),
+	(2, 'Coca Cola 500 ml' ,1, 19),
+	(3,  'Dairy Milk Chocolate 100 mg',2,10),
+	(4, 'Nestle Water Bottle 250m1', 2, 22),
+	(5, 'Lipton Tea 500 mg', 2, 21.35),
+	(6, 'Kitkat 100mg', 2, 25),
+	(7, 'Pears Soap', 7, 30),
+	(8, 'Coca Cola Diet 500 ml', 2, 40),
+	(9, 'Sprite 1.5L', 6 ,97),
+	(10,'Pepsi 1.5L' ,8 ,31),
+	(11, 'Dollar Pen' ,4, 21),
+	(12, 'Aquatina Water Bottle 250m1', 4 ,38),
+	(13, 'Notebook' ,8 ,6),
+	(14, 'Wallet', 7, 230),
+	(15, 'Keychain Batman', 2 ,15.5),
+	(16, 'Lu Gala', 3, 17.45);
+	
+
+insert into Orders values
+	(10248, 9, '1996-07-04'),
+	(10249, 2, '1996-07-05'),
+	(10250, 3, '1996-07-08'),
+	(10251, 1, '1996-07-08'),
+	(10252, 4, '1996-07-09'),
+	(10253, 5, '1996-07-10'),
+	(10254, 6, '1996-07-11');
+
+insert into Order_details values
+	(1, 10248, 1, 12),
+	(2, 10248, 2, 10),
+	(3, 10248, 7, 5),
+	(4, 10249, 1, 9),
+	(5, 10249, 2, 40),
+	(6, 10250, 2, 10),
+	(7, 10250, 2, 35),
+	(8, 10250, 4, 15),
+	(9, 10251, 5, 6),
+	(10, 10251, 6, 15),
+	(11, 10251,9, 20),
+	(12, 10252, 10, 40),
+	(13, 10252, 2,25),
+	(14, 10252, 3, 40),
+	(15, 10253, 3, 20),
+	(16, 10253, 5, 42),
+	(17,10253, 8, 40),
+	(18, 10254, 7, 15),
+	(19, 10254, 112, 121);
+
+insert into Customers values
+	(1, 'Furqan', 'Lahore'),
+	(2, 'Ahmed', 'Lahore'),
+	(3, 'Ali', 'Karachi'),
+	(4, 'Hamza', 'Islamabad'),
+	(5, 'Ayesha', 'Sahiwal'),
+	(6, 'Fatima', 'Lahore'),
+	(7, 'Nabeel', 'Quetta'),
+	(8, 'Asad', 'Lahore'),
+	(9, 'Imtiaz' ,'Peshawar'),
+	(10,'Kashif', 'Rawalpindi'),
+	(11,'Hammed', 'Lahore'),
+	(12,'Burhan', 'Islamabad'),
+	(13,'Rida' ,'Karachi');
+
+select * from Products;
+select * from Orders;
+select * from Order_details;
+select * from Customers;
+
+--q1
+select customer_name,Product_name
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid;
+--q2
+select customer_name,Product_name,price
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid;
+
+--q3
+select customer_name
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid
+where p.productid=3;
+
+--q4
+select p.Product_name
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid
+where c.customer_name = 'Ayesha';
+
+--q5
+select p.Product_name,c.customer_name
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid
+
+--q6
+select p.Product_name,c.customer_name,p.price
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid
+
+--q7 
+select p.Product_name,p.price
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid
+
+--q8
+select p.Product_name,c.customer_name
+from ((Customers as c join Orders as o on c.customer_id = o.Customer_id)
+	join Order_details as od on o.order_id = od.Order_Id) join  Products as p
+	on od.Product_Id = p.productid
+
+drop table Products;
+drop table Orders;
+drop table Order_details;
+drop table Customers;

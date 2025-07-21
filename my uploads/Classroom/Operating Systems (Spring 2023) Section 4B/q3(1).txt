@@ -1,0 +1,2 @@
+hello my name is laraib
+today, we are going to reverse consonants within a word without changing the positions of vowels.

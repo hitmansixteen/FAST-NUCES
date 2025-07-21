@@ -1,0 +1,9 @@
+The second attempt where he solves each answer of the nxn matrix separately is the most efficient and the fastest 
+and will result in the fastest result. depending on the pc supporting multithreading it can be used to its fullest
+
+The third attempt where he divides the matrix in two halves will take half the time as first attempt where all the multiplication is
+done sequentially.
+
+The first attempt comes last as the multiplication is done synchronously.
+
+Since each multiplication is independant of the other multiplictions attemp 2 is fastest then 3 then 1.
