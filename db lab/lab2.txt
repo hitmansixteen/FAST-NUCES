@@ -1,0 +1,102 @@
+create Table Student(
+	RollNum char(7) NOT NULL,
+	Name varchar(20),
+	Gender varchar(6),
+	Phone char(11)
+);
+insert into Student values('L164123','Ali Ahmad','Male','03333333333');
+insert into Student values('L164124','Rafia Ahmed','Female','03333456789');
+insert into Student values('L164125','Basit Junaid','Male','03453243567');
+
+insert into Student values('L162334','Fozan Shahid','Male',3.2); --valid
+
+alter table Student add constraint student_pk primary key(RollNum);
+alter table Student add constraint uniqueSudentRollNum unique (RollNum);
+
+Select* from Student;
+
+delete from Student where RollNum = 'L162334'; -- valid
+delete from Student where RollNum = 'L164123'; -- invalid
+delete from Student where RollNum = 'L164124'; -- invalid
+
+drop table Student;
+
+
+create Table Attendance(
+	RollNum char(7) NOT NULL,
+	Date_ date NOT NULL,
+	Status_ char(1), 
+	ClassVenue int NOT NULL,
+);
+insert into Attendance values('L164123','02-22-2016','P',2);
+insert into Attendance values('L164124','02-23-2016','A',1);
+insert into Attendance values('L164125','03-04-2016','P',2);
+
+
+alter table Attendance add constraint pk_attendance primary key(RollNum,Date_,ClassVenue);
+alter table Attendance add constraint uniqueAttendace unique (RollNum,Date_,ClassVenue);
+alter table Attendance add constraint fk_rollnum foreign key (RollNum) references Student(RollNum) on update cascade;
+alter table Attendance drop constraint fk_rollnum;
+
+alter table Attendance add constraint fk_classvenue foreign key (ClassVenue) references ClassVenue(ID)on update cascade;
+
+
+
+Select* from Attendance;
+
+drop table Attendance;
+
+
+create Table ClassVenue(
+	ID int NOT NULL,
+	Building varchar(20),
+	RoomNum int,
+	Teacher varchar(20)
+);
+insert into ClassVenue values(1,'CS',2,'Sarim Baig');
+insert into ClassVenue values(2,'Civil',7,'Bismillah Jan');
+
+insert into classVenue values(3,'CS',5,'Ali'); --invalid teacher does not exist
+
+alter table ClassVenue add constraint pk_classvenue primary key(ID);
+alter table ClassVenue add constraint uniqueClassVenue unique (ID);
+alter table ClassVenue add constraint fk_teacher foreign key (Teacher) references Teacher(Name) on update cascade;
+
+
+
+
+Select* from ClassVenue;
+
+drop table ClassVenue;
+
+
+create Table Teacher(
+	Name varchar(20) NOT NULL,
+	Designation varchar(20),
+	Department varchar(20)
+);
+insert into Teacher values('Sarim Baig','Assistant Prof.','Computer Science');
+insert into Teacher values('Bismillah Jan','Lecturer','Civil Eng.');
+insert into Teacher values('Kashif zafar','Professor','Electrical Eng.');
+
+update Teacher set Name = 'Dr. Kashif Zafar' where Name = 'Kashif zafar'; -- valid
+
+
+
+alter table Teacher add constraint pk_teacher primary key(Name);
+alter table Teacher add constraint uniqueTeacher unique (Name);
+
+Select* from Teacher;
+
+drop table Teacher;
+
+alter table Student add Warning_Count int;
+alter table Student add constraint wc_default default 0 for Warning_Count;
+alter table Student drop constraint wc_default;
+
+alter table Student drop column  Phone;
+
+
+
+
+
